@@ -1,0 +1,38 @@
+{
+  "$id": "https://example.invalid/skylark/input_manifest.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "scenes": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "raster_path": {
+            "pattern": "^rasters/(dev|test)_[0-9]{3}\\.tif$",
+            "type": "string"
+          },
+          "scene_id": {
+            "pattern": "^(dev|test)_[0-9]{3}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "scene_id",
+          "raster_path"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "1.0"
+    }
+  },
+  "required": [
+    "schema_version",
+    "scenes"
+  ],
+  "title": "Skylark GCP inference input manifest",
+  "type": "object"
+}

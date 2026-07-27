@@ -1,0 +1,70 @@
+{
+  "$id": "https://example.invalid/skylark/predictions.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "scenes": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "detections": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "confidence": {
+                  "maximum": 1,
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "latitude": {
+                  "maximum": 90,
+                  "minimum": -90,
+                  "type": "number"
+                },
+                "longitude": {
+                  "maximum": 180,
+                  "minimum": -180,
+                  "type": "number"
+                },
+                "pixel_x": {
+                  "type": "number"
+                },
+                "pixel_y": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "pixel_x",
+                "pixel_y",
+                "longitude",
+                "latitude",
+                "confidence"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "scene_id": {
+            "pattern": "^(dev|test)_[0-9]{3}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "scene_id",
+          "detections"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "1.0"
+    }
+  },
+  "required": [
+    "schema_version",
+    "scenes"
+  ],
+  "title": "Skylark GCP inference predictions",
+  "type": "object"
+}
