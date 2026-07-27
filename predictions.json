@@ -1,0 +1,353 @@
+{
+  "schema_version": "1.0",
+  "scenes": [
+    {
+      "scene_id": "test_002",
+      "detections": [
+        {
+          "pixel_x": 9866.625946,
+          "pixel_y": 8677.814106,
+          "longitude": 73.8265498376,
+          "latitude": 26.4462840875,
+          "confidence": 0.906206
+        },
+        {
+          "pixel_x": 11080.384705,
+          "pixel_y": 8791.865555,
+          "longitude": 73.8268932528,
+          "latitude": 26.4462578808,
+          "confidence": 0.893662
+        },
+        {
+          "pixel_x": 12796.791901,
+          "pixel_y": 6733.090803,
+          "longitude": 73.8273731633,
+          "latitude": 26.4467857835,
+          "confidence": 0.874884
+        },
+        {
+          "pixel_x": 3014.141098,
+          "pixel_y": 10969.229919,
+          "longitude": 73.824618608,
+          "latitude": 26.4456850441,
+          "confidence": 0.872529
+        },
+        {
+          "pixel_x": 16250.181458,
+          "pixel_y": 9573.862671,
+          "longitude": 73.828356732,
+          "latitude": 26.4460708674,
+          "confidence": 0.865499
+        },
+        {
+          "pixel_x": 14546.904694,
+          "pixel_y": 8252.406921,
+          "longitude": 73.8278718241,
+          "latitude": 26.4464032047,
+          "confidence": 0.861951
+        },
+        {
+          "pixel_x": 15107.469391,
+          "pixel_y": 9652.932274,
+          "longitude": 73.8280338993,
+          "latitude": 26.4460480966,
+          "confidence": 0.840206
+        },
+        {
+          "pixel_x": 10105.843475,
+          "pixel_y": 9577.325195,
+          "longitude": 73.8266197823,
+          "latitude": 26.4460557339,
+          "confidence": 0.836131
+        },
+        {
+          "pixel_x": 17423.946533,
+          "pixel_y": 13364.98291,
+          "longitude": 73.8286983055,
+          "latitude": 26.4451088171,
+          "confidence": 0.820476
+        },
+        {
+          "pixel_x": 12176.408417,
+          "pixel_y": 9360.445251,
+          "longitude": 73.8272045565,
+          "latitude": 26.4461157311,
+          "confidence": 0.818826
+        },
+        {
+          "pixel_x": 6632.653259,
+          "pixel_y": 5112.641327,
+          "longitude": 73.8256264147,
+          "latitude": 26.447183847,
+          "confidence": 0.800783
+        },
+        {
+          "pixel_x": 18359.325195,
+          "pixel_y": 12521.311462,
+          "longitude": 73.8289605569,
+          "latitude": 26.4453256831,
+          "confidence": 0.780582
+        },
+        {
+          "pixel_x": 17160.786926,
+          "pixel_y": 13723.935059,
+          "longitude": 73.8286248369,
+          "latitude": 26.4450168605,
+          "confidence": 0.775672
+        },
+        {
+          "pixel_x": 5439.936218,
+          "pixel_y": 7842.175003,
+          "longitude": 73.8252962864,
+          "latitude": 26.4464864601,
+          "confidence": 0.757591
+        },
+        {
+          "pixel_x": 14426.015289,
+          "pixel_y": 13222.233917,
+          "longitude": 73.8278504518,
+          "latitude": 26.445138195,
+          "confidence": 0.7469
+        },
+        {
+          "pixel_x": 18711.489746,
+          "pixel_y": 9287.393066,
+          "longitude": 73.8290517886,
+          "latitude": 26.446149472,
+          "confidence": 0.683966
+        },
+        {
+          "pixel_x": 1161.046082,
+          "pixel_y": 5000.742249,
+          "longitude": 73.8240793296,
+          "latitude": 26.4471996022,
+          "confidence": 0.650404
+        },
+        {
+          "pixel_x": 10858.054993,
+          "pixel_y": 6868.360031,
+          "longitude": 73.8268254423,
+          "latitude": 26.4467468613,
+          "confidence": 0.600812
+        },
+        {
+          "pixel_x": 5996.122208,
+          "pixel_y": 8930.437744,
+          "longitude": 73.8254563257,
+          "latitude": 26.44621081,
+          "confidence": 0.569881
+        },
+        {
+          "pixel_x": 15464.974808,
+          "pixel_y": 8825.952988,
+          "longitude": 73.8281328336,
+          "latitude": 26.4462593765,
+          "confidence": 0.564311
+        },
+        {
+          "pixel_x": 9866.327454,
+          "pixel_y": 7366.719147,
+          "longitude": 73.826546372,
+          "latitude": 26.4466177361,
+          "confidence": 0.560461
+        },
+        {
+          "pixel_x": 16734.467285,
+          "pixel_y": 14282.022064,
+          "longitude": 73.8285057573,
+          "latitude": 26.4448738497,
+          "confidence": 0.553131
+        },
+        {
+          "pixel_x": 8340.760818,
+          "pixel_y": 10911.418976,
+          "longitude": 73.8261242485,
+          "latitude": 26.4457121336,
+          "confidence": 0.545971
+        },
+        {
+          "pixel_x": 12546.0914,
+          "pixel_y": 14767.010193,
+          "longitude": 73.8273229965,
+          "latitude": 26.4447407177,
+          "confidence": 0.539439
+        },
+        {
+          "pixel_x": 16969.604691,
+          "pixel_y": 13685.904175,
+          "longitude": 73.8285706936,
+          "latitude": 26.4450260957,
+          "confidence": 0.538996
+        },
+        {
+          "pixel_x": 1413.932404,
+          "pixel_y": 8017.395599,
+          "longitude": 73.824158615,
+          "latitude": 26.446432509,
+          "confidence": 0.483376
+        },
+        {
+          "pixel_x": 16531.189529,
+          "pixel_y": 10697.716339,
+          "longitude": 73.8284390645,
+          "latitude": 26.4457855186,
+          "confidence": 0.479985
+        },
+        {
+          "pixel_x": 1036.770042,
+          "pixel_y": 10741.514633,
+          "longitude": 73.8240590339,
+          "latitude": 26.4457383944,
+          "confidence": 0.444945
+        },
+        {
+          "pixel_x": 14808.181946,
+          "pixel_y": 10823.276489,
+          "longitude": 73.8279523075,
+          "latitude": 26.4457495716,
+          "confidence": 0.433532
+        },
+        {
+          "pixel_x": 1801.63974,
+          "pixel_y": 8718.890038,
+          "longitude": 73.8242700298,
+          "latitude": 26.4462548936,
+          "confidence": 0.43079
+        },
+        {
+          "pixel_x": 15806.082397,
+          "pixel_y": 9404.982788,
+          "longitude": 73.8282307535,
+          "latitude": 26.4461128148,
+          "confidence": 0.423285
+        },
+        {
+          "pixel_x": 15103.837769,
+          "pixel_y": 8156.094482,
+          "longitude": 73.8280290174,
+          "latitude": 26.4464290058,
+          "confidence": 0.387315
+        },
+        {
+          "pixel_x": 17923.34285,
+          "pixel_y": 9475.326477,
+          "longitude": 73.8288294688,
+          "latitude": 26.4460998205,
+          "confidence": 0.381506
+        },
+        {
+          "pixel_x": 14895.124542,
+          "pixel_y": 14898.557983,
+          "longitude": 73.827987382,
+          "latitude": 26.444712689,
+          "confidence": 0.377138
+        },
+        {
+          "pixel_x": 8122.678772,
+          "pixel_y": 639.758972,
+          "longitude": 73.8260360968,
+          "latitude": 26.4483255733,
+          "confidence": 0.358634
+        },
+        {
+          "pixel_x": 17815.21476,
+          "pixel_y": 9016.137695,
+          "longitude": 73.8287977199,
+          "latitude": 26.446216425,
+          "confidence": 0.346889
+        },
+        {
+          "pixel_x": 16479.155334,
+          "pixel_y": 8372.050552,
+          "longitude": 73.8284183668,
+          "latitude": 26.4463772372,
+          "confidence": 0.330842
+        },
+        {
+          "pixel_x": 2363.788452,
+          "pixel_y": 6720.217407,
+          "longitude": 73.8244237814,
+          "latitude": 26.4467648258,
+          "confidence": 0.315835
+        },
+        {
+          "pixel_x": 7415.388016,
+          "pixel_y": 11740.814087,
+          "longitude": 73.8258647936,
+          "latitude": 26.4454989188,
+          "confidence": 0.310942
+        },
+        {
+          "pixel_x": 15430.06543,
+          "pixel_y": 11336.039978,
+          "longitude": 73.8281294295,
+          "latitude": 26.4456205246,
+          "confidence": 0.302639
+        },
+        {
+          "pixel_x": 15418.621712,
+          "pixel_y": 9378.809174,
+          "longitude": 73.8281211538,
+          "latitude": 26.4461185773,
+          "confidence": 0.291165
+        },
+        {
+          "pixel_x": 14073.633423,
+          "pixel_y": 13093.077209,
+          "longitude": 73.8277505041,
+          "latitude": 26.4451702458,
+          "confidence": 0.288974
+        },
+        {
+          "pixel_x": 12159.432983,
+          "pixel_y": 9344.998123,
+          "longitude": 73.8271997178,
+          "latitude": 26.4461196227,
+          "confidence": 0.282276
+        },
+        {
+          "pixel_x": 10200.09285,
+          "pixel_y": 1119.336365,
+          "longitude": 73.8266246143,
+          "latitude": 26.4482083537,
+          "confidence": 0.281731
+        },
+        {
+          "pixel_x": 10747.560272,
+          "pixel_y": 7963.507751,
+          "longitude": 73.8267970298,
+          "latitude": 26.44646791,
+          "confidence": 0.278263
+        },
+        {
+          "pixel_x": 14339.508148,
+          "pixel_y": 2079.727112,
+          "longitude": 73.8277972921,
+          "latitude": 26.4479735568,
+          "confidence": 0.26854
+        },
+        {
+          "pixel_x": 7239.42194,
+          "pixel_y": 2878.631714,
+          "longitude": 73.82579218,
+          "latitude": 26.4477537703,
+          "confidence": 0.267554
+        },
+        {
+          "pixel_x": 17533.885803,
+          "pixel_y": 13180.242828,
+          "longitude": 73.8287289088,
+          "latitude": 26.4451560848,
+          "confidence": 0.264933
+        },
+        {
+          "pixel_x": 5508.352158,
+          "pixel_y": 1451.702225,
+          "longitude": 73.8252991286,
+          "latitude": 26.4481128749,
+          "confidence": 0.26262
+        }
+      ]
+    }
+  ]
+}
