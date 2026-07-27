@@ -40,6 +40,9 @@ python validate_predictions.py predictions.json --manifest data/test/manifest.js
 ### Docker (exact evaluator command)
 
 ```bash
+# Set path to the assignment data root
+export ASSIGNMENT_ROOT=/path/to/Skylark_GCP_Inference_Pipeline_Assignment_v1
+
 docker build --platform linux/amd64 -t gcp-submission .
 
 mkdir -p output
@@ -50,22 +53,22 @@ docker run --rm \
   --network none \
   --read-only \
   --tmpfs /tmp:rw,size=2g \
-  -v "$PWD/data/development:/input:ro" \
-  -v "$PWD/path/to/model:/model:ro" \
+  -v "$ASSIGNMENT_ROOT/data/development:/input:ro" \
+  -v "$ASSIGNMENT_ROOT/model:/model:ro" \
   -v "$PWD/output:/output" \
   gcp-submission \
   --manifest /input/manifest.json \
   --model    /model/gcp_pose.onnx \
   --output   /output/predictions.json
 
-# Test run (final deliverable)
+# Test run (generates final deliverable)
 docker run --rm \
   --platform linux/amd64 \
   --network none \
   --read-only \
   --tmpfs /tmp:rw,size=2g \
-  -v "$PWD/data/test:/input:ro" \
-  -v "$PWD/path/to/model:/model:ro" \
+  -v "$ASSIGNMENT_ROOT/data/test:/input:ro" \
+  -v "$ASSIGNMENT_ROOT/model:/model:ro" \
   -v "$PWD/output:/output" \
   gcp-submission \
   --manifest /input/manifest.json \

@@ -180,10 +180,15 @@ def _read_window_as_rgb_float(
         n = min(3, ds.count)
         rgb_indices = list(range(1, n + 1))
 
-    raw = ds.read(rgb_indices, window=window, masked=True)  # (C, H, W) masked
+    raw = ds.read(rgb_indices, window=window, masked=True)  # (C, H, W) masked array
 
     # Entirely nodata -- safe to skip
-    if raw.mask.all():
+    # raw.mask may be a scalar False (no mask) or an ndarray
+    mask = raw.mask
+    if isinstance(mask, np.ndarray) and mask.all():
+        return None
+    # scalar True means entire array is masked
+    if mask is True:
         return None
 
     # Dtype max for normalisation
@@ -235,10 +240,23 @@ def _model_to_raster(
     return fx, fy
 
 
+def _build_transformer(crs: rasterio.CRS) -> pyproj.Transformer | None:
+    """
+    Build a pyproj Transformer from the raster CRS to WGS84.
+    Returns None if the raster is already in EPSG:4326.
+    """
+    epsg = crs.to_epsg()
+    if epsg == 4326:
+        return None
+    # crs.to_epsg() may return None for non-EPSG CRS definitions
+    src_crs = pyproj.CRS.from_wkt(crs.to_wkt()) if epsg is None else epsg
+    return pyproj.Transformer.from_crs(src_crs, 4326, always_xy=True)
+
+
 def _raster_to_geographic(
     fx: float, fy: float,
     transform: rasterio.Affine,
-    crs: rasterio.CRS,
+    transformer: pyproj.Transformer | None,
 ) -> tuple[float, float]:
     """
     Convert full-raster continuous pixel (fx, fy) to WGS84 (lon, lat).
@@ -248,16 +266,8 @@ def _raster_to_geographic(
     convention -- no extra offset needed.
     """
     cx, cy = transform * (fx, fy)
-
-    epsg = crs.to_epsg()
-    if epsg == 4326:
+    if transformer is None:
         return float(cx), float(cy)
-
-    transformer = pyproj.Transformer.from_crs(
-        epsg,
-        4326,
-        always_xy=True,
-    )
     lon, lat = transformer.transform(cx, cy)
     return float(lon), float(lat)
 
@@ -312,6 +322,7 @@ def _run_scene(
         transform = ds.transform
         crs = ds.crs
         width, height = ds.width, ds.height
+        transformer = _build_transformer(crs)  # built once per scene, reused per candidate
 
         windows = _tile_windows(width, height, TILE_SIZE, TILE_STRIDE)
         n_windows = len(windows)
@@ -358,7 +369,7 @@ def _run_scene(
                 fx, fy = _model_to_raster(
                     kx, ky, scale, left, top_pad, col_off, row_off
                 )
-                lon, lat = _raster_to_geographic(fx, fy, transform, crs)
+                lon, lat = _raster_to_geographic(fx, fy, transform, transformer)
 
                 all_candidates.append((fx, fy, lon, lat, score))
 

@@ -5,4 +5,7 @@ rasterio==1.4.3
 pyproj==3.7.1
 Pillow==11.2.1
 jsonschema==4.23.0
-opencv-python-headless==4.11.0.86
+# opencv-python-headless is optional (used for faster resize when available).
+# The pipeline falls back to Pillow automatically if cv2 is not installed.
+# Uncomment the line below if you want cv2 in Docker (adds ~50MB):
+# opencv-python-headless==4.10.0.84
