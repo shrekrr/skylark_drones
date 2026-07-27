@@ -112,14 +112,27 @@ The pipeline inspects each raster at runtime -- it never assumes band count, dty
 
 ## Dev Validation Results (dev_004)
 
-| Marker | GT pixel_x | GT pixel_y | Pred pixel_x | Pred pixel_y | Pixel dist | GT lon | GT lat | Matched |
-|---|---|---|---|---|---|---|---|---|
-| dev_004_marker_001 | 10821.30 | 6222.99 | ~10820.7 | ~6223.2 | < 1 px | 75.0978674 | 22.3487346 | Yes |
-| dev_004_marker_002 | 5129.32 | 9014.74 | ~5129.2 | ~9015.0 | < 1 px | 75.0959320 | 22.3478530 | Yes |
-| dev_004_marker_003 | 3625.84 | 13017.71 | ~3625.5 | ~13018.2 | < 1 px | 75.0954201 | 22.3465876 | Yes |
-| dev_004_marker_004 | 5868.49 | 13319.39 | ~5868.2 | ~13319.5 | < 1 px | 75.0961823 | 22.3464918 | Yes |
+All 4 ground-truth markers are recovered with sub-pixel accuracy:
 
-Confidence scores: 0.86-0.92. Zero false positives in final dedup output.
+| Marker | GT pixel_x | GT pixel_y | Pred pixel_x | Pred pixel_y | Pixel dist | Score | Matched |
+|---|---|---|---|---|---|---|---|
+| dev_004_marker_001 | 10821.30 | 6222.99 | 10821.1 | 6223.4 | 0.4 px | 0.9150 | Yes |
+| dev_004_marker_002 | 5129.32 | 9014.74 | 5129.4 | 9014.4 | 0.3 px | 0.9209 | Yes |
+| dev_004_marker_003 | 3625.84 | 13017.71 | 3625.6 | 13018.3 | 0.7 px | 0.9146 | Yes |
+| dev_004_marker_004 | 5868.49 | 13319.39 | 5868.2 | 13319.6 | 0.4 px | 0.8723 | Yes |
+
+**Total detections on dev_004: 81** (4 true positives + 77 false positives).
+
+### False Positive Analysis
+
+The model produces high-confidence false positives (scores up to 0.967) on non-GCP
+features in dev_004 (e.g. road markings, field patterns, shadows). Since FP scores
+overlap with TP scores (both in the 0.87-0.97 range), a confidence threshold alone
+cannot cleanly separate them. This is a known limitation of the supplied model on
+this particular scene type and is documented as-is per PRD requirements.
+
+The pipeline faithfully applies the model's outputs — no coordinate or count
+post-hoc editing is performed. The `test_002` output reflects the same behaviour.
 
 ---
 
